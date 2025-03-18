@@ -72,7 +72,7 @@ def load_config_and_tokenizer(model_spec: backends.ModelSpec) -> Tuple[AutoToken
             model_spec['base_model'],
             device_map='auto',
             fix_tokenizer=False,
-            token = "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", # use one if using gated models like meta-llama/Llama-2-7b-hf
+            token = "", # use one if using gated models like meta-llama/Llama-2-7b-hf
         )
     else:
         tokenizer = AutoTokenizer.from_pretrained(hf_model_str, device_map="auto", torch_dtype="auto",
@@ -140,7 +140,7 @@ def load_model(model_spec: backends.ModelSpec) -> Any:
             dtype=None,
             load_in_4bit=True,
             fix_tokenizer=False,
-            token = "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", # use one if using gated models like meta-llama/Llama-2-7b-hf
+            token = "", # use one if using gated models like meta-llama/Llama-2-7b-hf
         )
         model = PeftModel.from_pretrained(
             base_model,
