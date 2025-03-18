@@ -1,5 +1,15 @@
 [
   {
+    "game_name": "adventuregame",
+    "game_path": "../clemgames/adventuregame",
+    "description": "Adventure game",
+    "main_game": "adventuregame",
+    "players": "one",
+    "image": "none",
+    "languages": ["en"],
+    "benchmark": ["2.0"]
+  },
+  {
     "game_name": "cloudgame",
     "game_path": "../clemgames/cloudgame",
     "description": "A simple game in which a player has to decide whether they see clouds or not and a second player has to judge this response.",
@@ -100,10 +110,40 @@
     "benchmark": ["1.6", "1.6.5", "2.0"]
   },
   {
+    "game_name": "textmapworld",
+    "game_path": "../clemgames/textmapworld/textmapworld_main",
+    "description": "Exhaustively exploring a map.",
+    "main_game": "textmapworld",
+    "players": "one",
+    "image": "none",
+    "languages": ["en"],
+    "benchmark": ["2.0"]
+  },
+  {
+    "game_name": "textmapworld_graphreasoning",
+    "game_path": "../clemgames/textmapworld/textmapworld_graphreasoning",
+    "description": "Exhaustively exploring a map with graph reasoning.",
+    "main_game": "textmapworld",
+    "players": "one",
+    "image": "none",
+    "languages": ["en"],
+    "benchmark": ["2.0"]
+  },
+  {
+    "game_name": "textmapworld_specificroom",
+    "game_path": "../clemgames/textmapworld/textmapworld_specificroom",
+    "description": "Exploring a map to find a specific room.",
+    "main_game": "textmapworld",
+    "players": "one",
+    "image": "none",
+    "languages": ["en"],
+    "benchmark": ["2.0"]
+  },
+  {
     "game_name": "mm_mapworld",
-    "game_path": "../clemgames/mm_mapworld/mm_mapworld_main",
+    "game_path": "../clemgames/mm_mapworld",
     "description": "In this game an agent is placed on a graph and needs to navigate through it by reasoning about past steps taken",
-    "main_game": "mm_mapworld_main",
+    "main_game": "mm_mapworld",
     "players": "two",
     "image": "single",
     "languages": ["en"],
@@ -111,9 +151,9 @@
   },
   {
     "game_name": "mm_mapworld_graphs",
-    "game_path": "../clemgames/mm_mapworld/mm_mapworld_graphs",
+    "game_path": "../clemgames/mm_mapworld_graphs",
     "description": "In this game an agent is placed on a graph and needs to navigate through it by reasoning about past steps taken",
-    "main_game": "mm_mapworld_main",
+    "main_game": "mm_mapworld",
     "players": "two",
     "image": "single",
     "languages": ["en"],
@@ -121,9 +161,9 @@
   },
   {
     "game_name": "mm_mapworld_specificroom",
-    "game_path": "../clemgames/mm_mapworld/mm_mapworld_specificroom",
+    "game_path": "../clemgames/mm_mapworld_specificroom",
     "description": "In this game an agent is placed on a graph and needs to navigate through it by reasoning about past steps taken",
-    "main_game": "mm_mapworld_main",
+    "main_game": "mm_mapworld",
     "players": "two",
     "image": "single",
     "languages": ["en"],
@@ -162,41 +202,11 @@
     "benchmark": ["2.0"]
   },
   {
-    "game_name": "matchit_ascii",
-    "game_path": "../clemgames/matchit_ascii",
-    "description": "Matching grids of ASCII characters between two players.",
-    "main_game": "matchit_ascii",
+    "game_name": "guesswhat",
+    "game_path": "../clemgames/guesswhat",
+    "description": "Wordle 5-letter word guessing game with critic.",
+    "main_game": "guesswhat",
     "players": "two",
-    "image": "none",
-    "languages": ["en"],
-    "benchmark": ["2.0"]
-  },
-  {
-    "game_name": "textmapworld",
-    "game_path": "../clemgames/textmapworld/textmapworld_main",
-    "description": "Exhaustively exploring a map.",
-    "main_game": "textmapworld",
-    "players": "one",
-    "image": "none",
-    "languages": ["en"],
-    "benchmark": ["2.0"]
-  },
-  {
-    "game_name": "textmapworld_graphreasoning",
-    "game_path": "../clemgames/textmapworld/textmapworld_graphreasoning",
-    "description": "Exhaustively exploring a map with graph reasoning.",
-    "main_game": "textmapworld",
-    "players": "one",
-    "image": "none",
-    "languages": ["en"],
-    "benchmark": ["2.0"]
-  },
-  {
-    "game_name": "textmapworld_specificroom",
-    "game_path": "../clemgames/textmapworld/textmapworld_specificroom",
-    "description": "Exploring a map to find a specific room.",
-    "main_game": "textmapworld",
-    "players": "one",
     "image": "none",
     "languages": ["en"],
     "benchmark": ["2.0"]

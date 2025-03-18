@@ -7,6 +7,8 @@ import torch
 import re
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
 from jinja2 import TemplateError
+from peft import PeftModel
+from unsloth import FastLanguageModel
 
 import clemcore.backends as backends
 from clemcore.backends.utils import ensure_alternating_roles
@@ -29,6 +31,13 @@ def load_config_and_tokenizer(model_spec: backends.ModelSpec) -> Tuple[AutoToken
 
     use_api_key = False
     api_key = None
+
+    # add unsloth
+    use_unsloth: bool = model_spec['load_with_unsloth'] if 'load_with_unsloth' in model_spec else False
+    base_model_hf: str = model_spec['base_model'] if 'base_model' in model_spec else None
+
+
+
     if 'requires_api_key' in model_spec:
         if model_spec['requires_api_key']:
             # load HF API key:
@@ -57,6 +66,14 @@ def load_config_and_tokenizer(model_spec: backends.ModelSpec) -> Tuple[AutoToken
     elif use_api_key:
         tokenizer = AutoTokenizer.from_pretrained(hf_model_str, token=api_key, device_map="auto",
                                                   torch_dtype="auto", verbose=False)
+    elif use_unsloth:
+        print("USE UNSLOTH FOR TOKENIZER")
+        _, tokenizer = FastLanguageModel.from_pretrained(
+            model_spec['base_model'],
+            device_map='auto',
+            fix_tokenizer=False,
+            token = "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", # use one if using gated models like meta-llama/Llama-2-7b-hf
+        )
     else:
         tokenizer = AutoTokenizer.from_pretrained(hf_model_str, device_map="auto", torch_dtype="auto",
                                                   verbose=False)
@@ -73,6 +90,9 @@ def load_config_and_tokenizer(model_spec: backends.ModelSpec) -> Tuple[AutoToken
 
     if use_api_key:
         model_config = AutoConfig.from_pretrained(hf_model_str, token=api_key)
+    elif use_unsloth:
+        print("USE UNSLOTH BASE MODEL FOR AutoConfig")
+        model_config = AutoConfig.from_pretrained(base_model_hf)
     else:
         model_config = AutoConfig.from_pretrained(hf_model_str)
 
@@ -111,6 +131,23 @@ def load_model(model_spec: backends.ModelSpec) -> Any:
         api_key = creds["huggingface"]["api_key"]
         # load model using its default configuration:
         model = AutoModelForCausalLM.from_pretrained(hf_model_str, token=api_key, device_map="auto", torch_dtype="auto")
+    elif "load_with_unsloth" in model_spec and model_spec['load_with_unsloth']:
+        print("LOADING MODEL WITH UNSLOTH")
+
+        base_model, _ = FastLanguageModel.from_pretrained(
+            model_name=model_spec['base_model'],
+            max_seq_length=32000,
+            dtype=None,
+            load_in_4bit=True,
+            fix_tokenizer=False,
+            token = "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", # use one if using gated models like meta-llama/Llama-2-7b-hf
+        )
+        model = PeftModel.from_pretrained(
+            base_model,
+            hf_model_str,
+            device_map="auto"
+        )
+        model = FastLanguageModel.for_inference(model)
     else:
         model = AutoModelForCausalLM.from_pretrained(hf_model_str, device_map="auto", torch_dtype="auto")
 

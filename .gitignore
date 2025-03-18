@@ -192,3 +192,5 @@ cython_debug/
 #.idea/
 /venv_hf/
 /venv_llamacpp/
+evaluated_runs
+evaluated_runs/.*

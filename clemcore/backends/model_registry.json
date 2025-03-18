@@ -1,5 +1,205 @@
 [
     {
+        "model_name": "SFT-merged_fp16_DFINAL_1.1K-steps",
+        "base_model": "clembench-playpen/SFT-merged_fp16_DFINAL_1.1K-steps",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/SFT-merged_fp16_DFINAL_1.1K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": false
+    },
+    {
+        "model_name": "meta-llama-3.1_KTO_aborted_same_family_model_final",
+        "base_model": "clembench-playpen/SFT-merged_fp16_DFINAL_1.1K-steps",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/meta-llama_3.1_KTO_Aborted_same_family_model_FINAL",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "dpo_meta-llama-3.1_DPO_1neg_aborted_same_family_model_final",
+        "base_model": "clembench-playpen/SFT-merged_fp16_DFINAL_1.1K-steps",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/meta-llama-3.1_DPO_1neg_Aborted_same_family_model_Final",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "Mistral-small-2501-DFINAL_0.6K-steps",
+        "base_model": "unsloth/Mistral-Small-24B-Instruct-2501-unsloth-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/Mistral-Small-24B-Instruct-2501_playpen_SFT_DFINAL_0.6K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "</s>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "Unsloth-Mistral-Small-24B-Instruct-2501",
+        "base_model": "unsloth/Mistral-Small-24B-Instruct-2501-unsloth-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "unsloth/Mistral-Small-24B-Instruct-2501-unsloth-bnb-4bit",
+        "premade_chat_template": true,
+        "eos_to_cull": "</s>",
+        "load_with_unsloth": false
+    },
+    {
+        "model_name": "Mistral-small-2501-DFINAL_1.1K-steps",
+        "base_model": "unsloth/Mistral-Small-24B-Instruct-2501-unsloth-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/Mistral-Small-24B-Instruct-2501_playpen_SFT_DFINAL_1.1K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "</s>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "Mistral-small-2501-DFINAL_1.7K-steps",
+        "base_model": "unsloth/Mistral-Small-24B-Instruct-2501-unsloth-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/Mistral-Small-24B-Instruct-2501_playpen_SFT_DFINAL_1.7K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "</s>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "Mistral-small-2409-DFINAL_1.7K-steps",
+        "base_model": "unsloth/Mistral-Small-Instruct-2409-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/Mistral-Small-22B-Instruct_playpen_SFT_DFINAL_1.7K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "</s>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "Mistral-small-2409-DFINAL_1.7K-steps",
+        "base_model": "unsloth/Mistral-Small-Instruct-2409-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/Mistral-Small-22B-Instruct_playpen_SFT_DFINAL_1.7K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "</s>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-8B-sft-e1-DFINAL_0.7K-steps",
+        "base_model": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/llama-3.1-8B-Instruct_playpen_SFT_DFINAL_0.7K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-8B-sft-e1-DFINAL_1.1K-steps",
+        "base_model": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/llama-3.1-8B-Instruct_playpen_SFT_DFINAL_1.1K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-8B-sft-e1-DFINAL_1.7K-steps",
+        "base_model": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/llama-3.1-8B-Instruct_playpen_SFT_DFINAL_1.7K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-sft-e1-_E1_D40005",
+        "base_model": "unsloth/meta-llama-3.1-8b-instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/meta-llama-Meta-Llama-3.1-8B-Instruct_SFT_E1_D40005",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "Unsloth-meta-llama-3.1-4bit-plain",
+        "base_model": "unsloth/meta-llama-3.1-8b-instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "unsloth/meta-llama-3.1-8b-instruct-bnb-4bit",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": false
+    },
+    {
+        "model_name": "llama3.1-8B-sft-e1-DFINAL",
+        "base_model": "unsloth/meta-llama-3.1-8b-instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/meta-llama-Meta-Llama-3.1-8B-Instruct_playpen_SFT_DFINAL_llama",
+        "model_id": "clembench-playpen/meta-llama-Meta-Llama-3.1-8B-Instruct_playpen_SFT_DFINAL_llama",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "Unsloth-Qwen2.5-Coder-32B-bnb-4bit",
+        "base_model": "unsloth/Qwen2.5-32B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "unsloth/Qwen2.5-32B-Instruct-bnb-4bit",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|im_end\\|>",
+        "load_with_unsloth": false
+    },
+    {
+        "model_name": "Unsloth-meta-llama-3.1-70B-bnb-4bit",
+        "base_model": "unsloth/Meta-Llama-3.1-70B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "unsloth/Meta-Llama-3.1-70B-Instruct-bnb-4bit",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": false
+    },
+    {
+        "model_name": "qwen-coder-32B-sft-e1-DFINAL_1.7K-steps", 
+        "base_model": "unsloth/Qwen2.5-32B-Instruct-bnb-4bit",
+        "backend": "huggingface_local", 
+        "huggingface_id": "clembench-playpen/Qwen-coder-32B-Instruct_playpen_SFT_DFINAL_1.7K-steps", 
+        "premade_chat_template": true, 
+        "eos_to_cull": "<\\|im_end\\|>", 
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-70B-sft-e1-DFINAL_1.7K-steps", 
+        "base_model": "unsloth/Meta-Llama-3.1-70B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/llama-3.1-70B-Instruct_playpen_SFT_DFINAL_1.7K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-70B-sft-e1-DFINAL_1.1K-steps", 
+        "base_model": "unsloth/Meta-Llama-3.1-70B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/llama-3.1-70B-Instruct_playpen_SFT_DFINAL_1.1K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-70B-sft-e1-DFINAL_0.6K-steps", 
+        "base_model": "unsloth/Meta-Llama-3.1-70B-Instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/llama-3.1-70B-Instruct_playpen_SFT_DFINAL_0.6K-steps",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
+        "model_name": "llama3.1-8B-sft-e1-DFINAL",
+        "base_model": "unsloth/meta-llama-3.1-8b-instruct-bnb-4bit",
+        "backend": "huggingface_local",
+        "huggingface_id": "clembench-playpen/meta-llama-Meta-Llama-3.1-8B-Instruct_playpen_SFT_DFINAL_llama",
+        "model_id": "clembench-playpen/meta-llama-Meta-Llama-3.1-8B-Instruct_playpen_SFT_DFINAL_llama",
+        "premade_chat_template": true,
+        "eos_to_cull": "<\\|eot_id\\|>",
+        "load_with_unsloth": true
+    },
+    {
         "model_name": "openchat",
         "model_id": "openchat-3.5-0106",
         "backend": "openai_compatible",

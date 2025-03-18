@@ -19,10 +19,10 @@ arg_model0="$2"
 arg_temp=0.0
 
 if [ $# -eq 2 ]; then
-  { time python3 scripts/cli.py run -g "$arg_game" -m "${arg_model0}" -t $arg_temp; } 2>&1 | tee runtime."${arg_game}"."${arg_model0}"--"${arg_model0}".log
+  { time python3 clemcore/cli.py run -g "$arg_game" -m "${arg_model0}" -t $arg_temp; } 2>&1 | tee runtime."${arg_game}"."${arg_model0}"--"${arg_model0}".log
 fi
 
 if [ $# -eq 3 ]; then
   arg_model1="$3"
-  { time python3 scripts/cli.py run -g "$arg_game" -m "${arg_model0}" "${arg_model1}" -t $arg_temp; } 2>&1 | tee runtime."${arg_game}"."${arg_model0}"--"${arg_model1}".log
+  { time python3 clemcore/cli.py run -g "$arg_game" -m "${arg_model0}" "${arg_model1}" -t $arg_temp; } 2>&1 | tee runtime."${arg_game}"."${arg_model0}"--"${arg_model1}".log
 fi
